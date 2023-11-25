@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://b8f0ihgpmv1mt"]
+
+[ext_resource type="Texture2D" uid="uid://csbijxocpdg3c" path="res://res/parts/hull.png" id="1_4gcad"]
+[ext_resource type="Texture2D" uid="uid://cwgyrt6bbw538" path="res://res/parts/bridge.png" id="1_e1lti"]
+[ext_resource type="Script" path="res://src/UI/PartButton.cs" id="2_wmih4"]
+[ext_resource type="Texture2D" uid="uid://dlbfsv0jub1r8" path="res://res/parts/engine.png" id="3_u6p8v"]
+[ext_resource type="Script" path="res://src/UI/ShipGrid.cs" id="4_01jyj"]
+[ext_resource type="Texture2D" uid="uid://c7wdljoxwktqj" path="res://res/parts/railgun.png" id="5_okamv"]
+[ext_resource type="Texture2D" uid="uid://doc0p40uq5ni1" path="res://res/parts/laser.png" id="6_j16wd"]
+[ext_resource type="Script" path="res://src/UI/StartButton.cs" id="8_tdayg"]
+[ext_resource type="Script" path="res://src/UI/SaveButton.cs" id="9_myrb7"]
+[ext_resource type="Script" path="res://src/UI/LoadButton.cs" id="10_praye"]
+
+[node name="CraftingGui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 696.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="BridgeButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_e1lti")
+script = ExtResource("2_wmih4")
+Part = 0
+
+[node name="HullButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_4gcad")
+script = ExtResource("2_wmih4")
+Part = 1
+
+[node name="EngineButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_u6p8v")
+script = ExtResource("2_wmih4")
+Part = 2
+
+[node name="RailgunButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_okamv")
+script = ExtResource("2_wmih4")
+Part = 3
+
+[node name="LaserButton" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_j16wd")
+script = ExtResource("2_wmih4")
+Part = 4
+
+[node name="ShipGrid" type="GridContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 5
+script = ExtResource("4_01jyj")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Start"
+script = ExtResource("8_tdayg")
+
+[node name="SaveButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Save"
+script = ExtResource("9_myrb7")
+
+[node name="LoadButton" type="Button" parent="HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Load"
+script = ExtResource("10_praye")

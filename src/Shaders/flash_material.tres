@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://mgrlxdy125ap"]
+
+[ext_resource type="Shader" path="res://src/Shaders/flash.gdshader" id="1_jybrk"]
+
+[resource]
+shader = ExtResource("1_jybrk")
+shader_parameter/active = false
